@@ -1,4 +1,4 @@
-import {ViewPropTypes} from 'deprecated-react-native-prop-types';
+import { ViewStyle } from 'react-native';
 import { number, shape, string, node, bool } from 'prop-types';
 
 export const ShadowARTType = {
@@ -16,10 +16,9 @@ export const ShadowARTType = {
 };
 
 export const InnerShadowType = {
-  ...ViewPropTypes,
   children: node,
   style: shape({
-    ...ViewPropTypes.style,
+    ...ViewStyle,
     width: number.isRequired,
     height: number.isRequired,
   }),
@@ -40,10 +39,10 @@ export const NeomorphType = {
 
 export const NeomorphFlexType = {
   ...NeomorphType,
-  style: ViewPropTypes.style,
+  ...ViewStyle,
 };
 
 export const ShadowFlexType = {
   ...OuterShadowType,
-  style: ViewPropTypes.style,
+  ...ViewStyle,
 };
